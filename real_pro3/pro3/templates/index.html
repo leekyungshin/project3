@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor=#d4aeae>
+    <center>
+        <h1> Severity prediction </h1><br>
+        
+        <form action="{{ url_for('main') }}" method="POST">
+          <b>Latitude: <input type='number' step="0.01", name='a', placeholder="insert float"><br>
+          Longitude: <input type='number' step="0.01", name='b', placeholder="insert float"><br>
+          Distance: <input type='number' step="0.01", name='c', placeholder="mile"><br>
+          Temperature: <input type='number' step="0.01", name='d', placeholder="Fahrenheit"><br>
+          Humidity: <input type='number' step="0.01", name='e', placeholder="percentage"><br>
+          Pressure: <input type='number' step="0.01", name='f', placeholder="in"><br>
+          Visibility: <input type='number' step="0.01", name='g', placeholder="mi"><br>
+          Wind speed: <input type='number' step="0.01", name='h', placeholder="mph"><br>
+          precipitation: <input type='number' step="0.01", name='i', placeholder="inch"><br>
+          Accident time: <input type='number', name='j', placeholder="insert int"><br>
+          Month: <input type='number', name='k', placeholder="insert int"><br>
+          Week: <input type='number', name='l', placeholder="insert int"><br>
+          Day: <input type='number', name='m', placeholder="insert int"><br>
+          Hour: <input type='number', name='n', placeholder="insert int"><br>
+          Minute: <input type='number', name='o', placeholder="insert int"><br></b>
+          <input type="submit" , value='predict' >
+        </form>
+
+        <br>
+
+        <div class="result" align="center">
+            
+            <!-- Our 'result' is false until a prediction has been made -->
+            {% if result %}
+
+                <!-- Print prediction -->
+                <br> Prediction result:
+                <p style="font-size:50px">{{ result }}</p>
+            
+            {% endif %}
+        </div>
+
+        <br><br>
+        
+        <button type="button" onclick="location.href='http://localhost:3000/public/dashboard/2e047189-5046-4474-867e-e0f3ed27e4b0' ">ABOUT MODEL</button>
+
+        
+    </center>
+
+</body>
+</html>
